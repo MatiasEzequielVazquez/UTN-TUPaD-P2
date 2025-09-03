@@ -9,7 +9,7 @@ public class TP2 {
 
     public static void main(String[] args) {
 
-        /*  
+        /* 
         System.out.println("Ejercicio 1: ");
         ejercicio1.ejercicio1();
         
@@ -36,22 +36,20 @@ public class TP2 {
         
         System.out.println("Ejercicio 9: ");
         ejercicio9.ejercicio9();
-        
+        */
         System.out.println("Ejercicio 10: ");
         ejercicio10.ejercicio10();
-        
+        /*
         System.out.println("Ejercicio 11: ");
         ejercicio11.ejercicio11();
-        
+         
+        System.out.println("Ejercicio 12: ");
+        ejercicio12.ejercicio12();
+          
         System.out.println("Ejercicio 13: ");
         ejercicio13.ejercicio13();
         
         */
-        
-        System.out.println("Ejercicio 13: ");
-        ejercicio13.ejercicio13();
-        
-        
         
     }
     
