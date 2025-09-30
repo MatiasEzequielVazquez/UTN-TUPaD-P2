@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_8">
+  <ClassDiagramComponents>
+    <Class name="Documento" package="tp5_8" visibility="public" xPosition="620.0" yPosition="455.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="contenido" type="String" visibility="private"/>
+        <Field name="firmaDigital" type="FirmaDigital" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="contenido"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="contenido"/>
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="String" name="fecha"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTitulo" returnType="String" visibility="public"/>
+        <Method name="setTitulo" returnType="void" visibility="public">
+          <Argument type="String" name="titulo"/>
+        </Method>
+        <Method name="getContenido" returnType="String" visibility="public"/>
+        <Method name="setContenido" returnType="void" visibility="public">
+          <Argument type="String" name="contenido"/>
+        </Method>
+        <Method name="getFirmaDigital" returnType="FirmaDigital" visibility="public"/>
+        <Method name="firmarDocumento" returnType="void" visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+          <Argument type="String" name="fecha"/>
+        </Method>
+        <Method name="generarHash" returnType="String" visibility="private">
+          <Argument type="String" name="contenido"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FirmaDigital" package="tp5_8" visibility="public" xPosition="44.0" yPosition="186.0">
+      <Fields>
+        <Field name="codigoHash" type="String" visibility="private"/>
+        <Field name="fecha" type="String" visibility="private"/>
+        <Field name="usuario" type="Usuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="codigoHash"/>
+          <Argument type="String" name="fecha"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigoHash" returnType="String" visibility="public"/>
+        <Method name="setCodigoHash" returnType="void" visibility="public">
+          <Argument type="String" name="codigoHash"/>
+        </Method>
+        <Method name="getFecha" returnType="String" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="String" name="fecha"/>
+        </Method>
+        <Method name="getUsuario" returnType="Usuario" visibility="public"/>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP5_8" package="tp5_8" visibility="public" xPosition="637.0" yPosition="38.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="tp5_8" visibility="public" xPosition="1048.0" yPosition="122.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="usuario" source="tp5_8.FirmaDigital" target="tp5_8.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_8.FirmaDigital" target="tp5_8.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="firmaDigital" source="tp5_8.Documento" target="tp5_8.FirmaDigital" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_8.Documento" target="tp5_8.FirmaDigital" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_8.Documento" target="tp5_8.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

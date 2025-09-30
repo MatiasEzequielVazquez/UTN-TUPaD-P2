@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_3">
+  <ClassDiagramComponents>
+    <Class name="Autor" package="tp5_3" visibility="public" xPosition="38.0" yPosition="215.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="nacionalidad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="nacionalidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getNacionalidad" returnType="String" visibility="public"/>
+        <Method name="setNacionalidad" returnType="void" visibility="public">
+          <Argument type="String" name="nacionalidad"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Editorial" package="tp5_3" visibility="public" xPosition="934.0" yPosition="215.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="direccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Libro" package="tp5_3" visibility="public" xPosition="433.0" yPosition="148.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="isbn" type="String" visibility="private"/>
+        <Field name="autor" type="Autor" visibility="private"/>
+        <Field name="editorial" type="Editorial" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="isbn"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="isbn"/>
+          <Argument type="Autor" name="autor"/>
+          <Argument type="Editorial" name="editorial"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTitulo" returnType="String" visibility="public"/>
+        <Method name="setTitulo" returnType="void" visibility="public">
+          <Argument type="String" name="titulo"/>
+        </Method>
+        <Method name="getIsbn" returnType="String" visibility="public"/>
+        <Method name="setIsbn" returnType="void" visibility="public">
+          <Argument type="String" name="isbn"/>
+        </Method>
+        <Method name="getAutor" returnType="Autor" visibility="public"/>
+        <Method name="setAutor" returnType="void" visibility="public">
+          <Argument type="Autor" name="autor"/>
+        </Method>
+        <Method name="getEditorial" returnType="Editorial" visibility="public"/>
+        <Method name="setEditorial" returnType="void" visibility="public">
+          <Argument type="Editorial" name="editorial"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP5_3" package="tp5_3" visibility="public" xPosition="500.0" yPosition="18.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="editorial" source="tp5_3.Libro" target="tp5_3.Editorial" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_3.Libro" target="tp5_3.Editorial" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_3.Libro" target="tp5_3.Autor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="autor" source="tp5_3.Libro" target="tp5_3.Autor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

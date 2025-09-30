@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_12">
+  <ClassDiagramComponents>
+    <Class name="Calculadora" package="tp5_12" visibility="public" xPosition="121.0" yPosition="122.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcular" returnType="void" visibility="public">
+          <Argument type="Impuesto" name="impuesto"/>
+        </Method>
+        <Method name="calcularSoloTotal" returnType="double" visibility="public">
+          <Argument type="Impuesto" name="impuesto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Contribuyente" package="tp5_12" visibility="public" xPosition="1009.0" yPosition="313.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="cuil" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="cuil"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getCuil" returnType="String" visibility="public"/>
+        <Method name="setCuil" returnType="void" visibility="public">
+          <Argument type="String" name="cuil"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Impuesto" package="tp5_12" visibility="public" xPosition="470.0" yPosition="313.0">
+      <Fields>
+        <Field name="monto" type="double" visibility="private"/>
+        <Field name="contribuyente" type="Contribuyente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="monto"/>
+          <Argument type="Contribuyente" name="contribuyente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMonto" returnType="double" visibility="public"/>
+        <Method name="setMonto" returnType="void" visibility="public">
+          <Argument type="double" name="monto"/>
+        </Method>
+        <Method name="getContribuyente" returnType="Contribuyente" visibility="public"/>
+        <Method name="setContribuyente" returnType="void" visibility="public">
+          <Argument type="Contribuyente" name="contribuyente"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP5_12" package="tp5_12" visibility="public" xPosition="605.0" yPosition="88.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="tp5_12.Impuesto" target="tp5_12.Contribuyente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contribuyente" source="tp5_12.Impuesto" target="tp5_12.Contribuyente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_12.Calculadora" target="tp5_12.Impuesto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

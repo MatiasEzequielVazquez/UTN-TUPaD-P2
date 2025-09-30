@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_6">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="tp5_6" visibility="public" xPosition="91.0" yPosition="251.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="telefono"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Mesa" package="tp5_6" visibility="public" xPosition="1224.0" yPosition="313.0">
+      <Fields>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="capacidad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="numero"/>
+          <Argument type="int" name="capacidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumero" returnType="int" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="int" name="numero"/>
+        </Method>
+        <Method name="getCapacidad" returnType="int" visibility="public"/>
+        <Method name="setCapacidad" returnType="void" visibility="public">
+          <Argument type="int" name="capacidad"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Reserva" package="tp5_6" visibility="public" xPosition="528.0" yPosition="196.0">
+      <Fields>
+        <Field name="fecha" type="String" visibility="private"/>
+        <Field name="hora" type="String" visibility="private"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="mesa" type="Mesa" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="fecha"/>
+          <Argument type="String" name="hora"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Mesa" name="mesa"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFecha" returnType="String" visibility="public"/>
+        <Method name="setFecha" returnType="void" visibility="public">
+          <Argument type="String" name="fecha"/>
+        </Method>
+        <Method name="getHora" returnType="String" visibility="public"/>
+        <Method name="setHora" returnType="void" visibility="public">
+          <Argument type="String" name="hora"/>
+        </Method>
+        <Method name="getCliente" returnType="Cliente" visibility="public"/>
+        <Method name="setCliente" returnType="void" visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="getMesa" returnType="Mesa" visibility="public"/>
+        <Method name="setMesa" returnType="void" visibility="public">
+          <Argument type="Mesa" name="mesa"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP5_6" package="tp5_6" visibility="public" xPosition="619.0" yPosition="23.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="tp5_6.Reserva" target="tp5_6.Mesa" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_6.Reserva" target="tp5_6.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mesa" source="tp5_6.Reserva" target="tp5_6.Mesa" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="tp5_6.Reserva" target="tp5_6.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

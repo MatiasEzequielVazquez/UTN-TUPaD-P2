@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_13">
+  <ClassDiagramComponents>
+    <Class name="CodigoQR" package="tp5_13" visibility="public" xPosition="118.0" yPosition="269.0">
+      <Fields>
+        <Field name="valor" type="String" visibility="private"/>
+        <Field name="usuario" type="Usuario" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="valor"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValor" returnType="String" visibility="public"/>
+        <Method name="setValor" returnType="void" visibility="public">
+          <Argument type="String" name="valor"/>
+        </Method>
+        <Method name="getUsuario" returnType="Usuario" visibility="public"/>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GeneradorQR" package="tp5_13" visibility="public" xPosition="827.0" yPosition="58.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="generar" returnType="void" visibility="public">
+          <Argument type="String" name="valor"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+        <Method name="generarMultiple" returnType="void" visibility="public">
+          <Argument type="String[]" name="valores"/>
+          <Argument type="Usuario" name="usuario"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TP5_13" package="tp5_13" visibility="public" xPosition="559.0" yPosition="58.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="tp5_13" visibility="public" xPosition="559.0" yPosition="269.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="tp5_13.GeneradorQR" target="tp5_13.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_13.CodigoQR" target="tp5_13.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuario" source="tp5_13.CodigoQR" target="tp5_13.Usuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

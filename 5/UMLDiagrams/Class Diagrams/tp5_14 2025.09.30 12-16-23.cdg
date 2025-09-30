@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_14">
+  <ClassDiagramComponents>
+    <Class name="EditorVideo" package="tp5_14" visibility="public" xPosition="81.0" yPosition="478.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="exportar" returnType="void" visibility="public">
+          <Argument type="String" name="formato"/>
+          <Argument type="Proyecto" name="proyecto"/>
+        </Method>
+        <Method name="exportarMultiplesFormatos" returnType="void" visibility="public">
+          <Argument type="String[]" name="formatos"/>
+          <Argument type="Proyecto" name="proyecto"/>
+        </Method>
+        <Method name="analizarProyecto" returnType="void" visibility="public">
+          <Argument type="Proyecto" name="proyecto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Proyecto" package="tp5_14" visibility="public" xPosition="626.0" yPosition="431.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="duracionMin" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="duracionMin"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDuracionMin" returnType="int" visibility="public"/>
+        <Method name="setDuracionMin" returnType="void" visibility="public">
+          <Argument type="int" name="duracionMin"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Render" package="tp5_14" visibility="public" xPosition="1090.0" yPosition="431.0">
+      <Fields>
+        <Field name="formato" type="String" visibility="private"/>
+        <Field name="proyecto" type="Proyecto" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="formato"/>
+          <Argument type="Proyecto" name="proyecto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getFormato" returnType="String" visibility="public"/>
+        <Method name="setFormato" returnType="void" visibility="public">
+          <Argument type="String" name="formato"/>
+        </Method>
+        <Method name="getProyecto" returnType="Proyecto" visibility="public"/>
+        <Method name="setProyecto" returnType="void" visibility="public">
+          <Argument type="Proyecto" name="proyecto"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP5_14" package="tp5_14" visibility="public" xPosition="658.0" yPosition="208.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="tp5_14.EditorVideo" target="tp5_14.Proyecto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_14.Render" target="tp5_14.Proyecto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="proyecto" source="tp5_14.Render" target="tp5_14.Proyecto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

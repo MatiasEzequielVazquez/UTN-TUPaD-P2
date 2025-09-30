@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_1">
+  <ClassDiagramComponents>
+    <Class name="Foto" package="tp5_1" visibility="public" xPosition="15.0" yPosition="235.0">
+      <Fields>
+        <Field name="imagen" type="String" visibility="private"/>
+        <Field name="formato" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="imagen"/>
+          <Argument type="String" name="formato"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getImagen" returnType="String" visibility="public"/>
+        <Method name="setImagen" returnType="void" visibility="public">
+          <Argument type="String" name="imagen"/>
+        </Method>
+        <Method name="getFormato" returnType="String" visibility="public"/>
+        <Method name="setFormato" returnType="void" visibility="public">
+          <Argument type="String" name="formato"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pasaporte" package="tp5_1" visibility="public" xPosition="324.0" yPosition="192.0">
+      <Fields>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="fechaEmision" type="String" visibility="private"/>
+        <Field name="titular" type="Titular" visibility="private"/>
+        <Field name="foto" type="Foto" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="numero"/>
+          <Argument type="String" name="fechaEmision"/>
+          <Argument type="Titular" name="titular"/>
+          <Argument type="String" name="imagenFoto"/>
+          <Argument type="String" name="formatoFoto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumero" returnType="String" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="String" name="numero"/>
+        </Method>
+        <Method name="getFechaEmision" returnType="String" visibility="public"/>
+        <Method name="setFechaEmision" returnType="void" visibility="public">
+          <Argument type="String" name="fechaEmision"/>
+        </Method>
+        <Method name="getTitular" returnType="Titular" visibility="public"/>
+        <Method name="setTitular" returnType="void" visibility="public">
+          <Argument type="Titular" name="titular"/>
+        </Method>
+        <Method name="getFoto" returnType="Foto" visibility="public"/>
+        <Method name="setFoto" returnType="void" visibility="public">
+          <Argument type="String" name="imagen"/>
+          <Argument type="String" name="formato"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Titular" package="tp5_1" visibility="public" xPosition="983.0" yPosition="192.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="pasaporte" type="Pasaporte" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDni" returnType="String" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="getPasaporte" returnType="Pasaporte" visibility="public"/>
+        <Method name="setPasaporte" returnType="void" visibility="public">
+          <Argument type="Pasaporte" name="pasaporte"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TP5_1" package="tp5_1" visibility="public" xPosition="404.0" yPosition="30.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="foto" source="tp5_1.Pasaporte" target="tp5_1.Foto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="titular" source="tp5_1.Pasaporte" target="tp5_1.Titular" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_1.Pasaporte" target="tp5_1.Foto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_1.Titular" target="tp5_1.Pasaporte" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_1.Pasaporte" target="tp5_1.Titular" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pasaporte" source="tp5_1.Titular" target="tp5_1.Pasaporte" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

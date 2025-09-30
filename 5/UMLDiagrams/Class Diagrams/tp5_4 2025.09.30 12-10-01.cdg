@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5_4">
+  <ClassDiagramComponents>
+    <Class name="Banco" package="tp5_4" visibility="public" xPosition="31.0" yPosition="160.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="cuit" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="cuit"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getCuit" returnType="String" visibility="public"/>
+        <Method name="setCuit" returnType="void" visibility="public">
+          <Argument type="String" name="cuit"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="tp5_4" visibility="public" xPosition="979.0" yPosition="160.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="tarjeta" type="TarjetaDeCredito" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDni" returnType="String" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="getTarjeta" returnType="TarjetaDeCredito" visibility="public"/>
+        <Method name="setTarjeta" returnType="void" visibility="public">
+          <Argument type="TarjetaDeCredito" name="tarjeta"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TarjetaDeCredito" package="tp5_4" visibility="public" xPosition="357.0" yPosition="149.0">
+      <Fields>
+        <Field name="numero" type="String" visibility="private"/>
+        <Field name="fechaVencimiento" type="String" visibility="private"/>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="banco" type="Banco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="numero"/>
+          <Argument type="String" name="fechaVencimiento"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="numero"/>
+          <Argument type="String" name="fechaVencimiento"/>
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Banco" name="banco"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumero" returnType="String" visibility="public"/>
+        <Method name="setNumero" returnType="void" visibility="public">
+          <Argument type="String" name="numero"/>
+        </Method>
+        <Method name="getFechaVencimiento" returnType="String" visibility="public"/>
+        <Method name="setFechaVencimiento" returnType="void" visibility="public">
+          <Argument type="String" name="fechaVencimiento"/>
+        </Method>
+        <Method name="getCliente" returnType="Cliente" visibility="public"/>
+        <Method name="setCliente" returnType="void" visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+        </Method>
+        <Method name="getBanco" returnType="Banco" visibility="public"/>
+        <Method name="setBanco" returnType="void" visibility="public">
+          <Argument type="Banco" name="banco"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TP5_4" package="tp5_4" visibility="public" xPosition="518.0" yPosition="19.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cliente" source="tp5_4.TarjetaDeCredito" target="tp5_4.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tarjeta" source="tp5_4.Cliente" target="tp5_4.TarjetaDeCredito" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="banco" source="tp5_4.TarjetaDeCredito" target="tp5_4.Banco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_4.TarjetaDeCredito" target="tp5_4.Banco" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_4.Cliente" target="tp5_4.TarjetaDeCredito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5_4.TarjetaDeCredito" target="tp5_4.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
